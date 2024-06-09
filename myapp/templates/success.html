@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .info {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Client and Invoice Information Saved Successfully!</h1>
+    <div class="info">
+        <p><strong>Client:</strong> {{ client.name }}</p>
+        <p><strong>Email:</strong> {{ client.email }}</p>
+        <p><strong>Phone:</strong> {{ client.phone }}</p>
+        <p><strong>Address:</strong> {{ client.address }}</p>
+    </div>
+    <div class="info">
+        <p><strong>Invoice:</strong> {{ invoice.invoice_number }}</p>
+        <p><strong>Date:</strong> {{ invoice.invoice_date }}</p>
+        <p><strong>Due Date:</strong> {{ invoice.due_date }}</p>
+    </div>
+</body>
+</html>
