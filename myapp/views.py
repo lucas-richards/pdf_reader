@@ -6,6 +6,7 @@ from .models import Client, Invoice
 from datetime import datetime
 from PyPDF2 import PdfReader  # Updated import
 
+
 def extract_client_info(pdf_text):
     client_info = {
         'name': '',
@@ -15,7 +16,7 @@ def extract_client_info(pdf_text):
     }
     
     # Use regular expressions to find patterns
-    name_match = re.search(r'Name:\s*(.*)', pdf_text)
+    name_match = re.search(r'REFERRED BY:\s*(.*)', pdf_text)
     email_match = re.search(r'Email:\s*(.*)', pdf_text)
     phone_match = re.search(r'Phone:\s*(.*)', pdf_text)
     address_match = re.search(r'Address:\s*(.*)', pdf_text)
@@ -70,12 +71,11 @@ def upload_pdf(request):
                 pdf_reader = PdfReader(file)  # Updated to use PdfReader
                 for page in pdf_reader.pages:
                     pdf_text += page.extract_text()
+                    print(page.extract_text())
             
             # Extract client and invoice information from the text
             client_info = extract_client_info(pdf_text)
             invoice_info = extract_invoice_info(pdf_text)
-            print(client_info)
-            print(invoice_info)
             # Save client to the database
             client, created = Client.objects.get_or_create(
                 name=client_info['name'],
