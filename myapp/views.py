@@ -4,7 +4,7 @@ from django.core.files.storage import FileSystemStorage
 from .forms import PDFUploadForm
 from .models import Client, Invoice
 from datetime import datetime
-from PyPDF2 import PdfReader  # Updated import
+from PyPDF2 import PdfReader  # Updated 
 
 
 def extract_client_info(pdf_text):
