@@ -9,7 +9,7 @@ output_pdf_path = 'Filled_Form.pdf'
 data_dict = {
     'Date Requested': '2024-06-15',
     'Requested By': 'John Doe',
-    'Company Name': 'ABC Inc.',
+    'Company Name': 'AB Inc.',
     'Firm': 'Law Firm LLC',
     'Claim': 'ABC123',
     'Phone': '555-1234',
